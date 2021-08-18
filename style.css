@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Vazir";
+  src: url(./fonts/Vazir.eot), url(./fonts/Vazir.ttf), url(./fonts/Vazir.woff),
+    url(./fonts/Vazir.woff2);
+}
+* {
+  font-family: "Vazir";
+}
+#drop-down-menu {
+  position: relative;
+  display: inline-block;
+}
+#drop-down-menu:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+.dropdown-menu li {
+  display: block;
+}
+#cart-link a {
+  color: black;
+  text-decoration: none;
+}
+.icon {
+  color: #0d6efd;
+  background-color: #ebeafb;
+  display: inline-flex;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.card-black {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.black-card-text {
+  color: #e0e0e0;
+}
+#carousel-section {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.carousel-item img {
+  width: 100px;
+  height: 500px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 60px;
+  width: 60px;
+  outline: rgba(255, 255, 255, 0.6);
+  background-size: 100%, 100%;
+  border-radius: 40%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.carousel-button-style {
+  border: 100px solid black;
+}
+@media (max-width: 445px) {
+  .carousel-control-prev-icon:after {
+    content: "next";
+    font-size: 9px;
+  }
+  .carousel-control-next-icon:after {
+    content: "prev";
+    font-size: 9px;
+  }
+}
+
+.textarea-len {
+  height: 500px;
+}
+footer {
+  color: #ffffff;
+}
+footer p {
+  color: #e0e0e0;
+}
+footer a {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+#login-form img {
+  width: 300px;
+  height: 150px;
+}
+#login-hr {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9e9e9e;
+}
+.form-element {
+  width: 650px;
+}
+
+@media screen and (max-width: 767px) {
+  #login-hr {
+    width: 300px;
+  }
+  .form-element {
+    width: 250px;
+  }
+}
+
+#login-from a {
+  width: 90px;
+}
+
+#login-hr::before,
+#login-hr::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #bdbdbd;
+  margin: 5px;
+}
+
+#signup-form {
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+}
+#signup-form button {
+  width: 100%;
+  height: 100%;
+}
