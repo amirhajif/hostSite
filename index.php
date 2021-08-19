@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['firstLogin']))
+{
+    unset($_SESSION['firstLogin']);
+    echo '<script>window.alert("به فروش هاست ما خوش آمدید")</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -177,10 +185,10 @@
                 ><a
                   class="btn btn-outline-primary rounded-pill"
                   style="width: 70px"
-                  href="./login.html"
+                  href="./login.php"
                 >
                   ورود
-                <a/></span
+                </a></span
               >
             </div>
           </div>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['failSignUp']))
+{
+    unset($_SESSION['failSignUp']);
+    echo '<script>window.alert("این ایمیل ثبت شده است")</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -18,6 +26,7 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <title>یک تایتل</title>
+    <script src="checkFile/fieldValidate.js"></script>
   </head>
 
   <body class="bg-dark">
@@ -26,22 +35,28 @@
         <div class="row align-items-center justify-content-evenly">
           <div class="col-md-5">
             <h4 class="text-center fw-bold my-4 my-md-0">فرم ثبت نام</h4>
-            <form action="">
+            <form action="checkFile/checkSignUp.php" method="post" onsubmit="return signup()">
               <div class="form-floating my-3">
                 <input
+                  onchange="change('email')"
                   type="email"
                   class="form-control"
                   id="email"
+                  name="email"
                   placeholder="name@example.com"
+                  required
                 />
                 <label for="floatingInput"><i class="bi bi-at"></i>ایمیل</label>
               </div>
               <div class="form-floating my-3">
                 <input
+                  onchange="change('phoneNumber')"
                   type="text"
                   class="form-control text-end"
                   id="phoneNumber"
-                  placeholder="phonerNumber"
+                  name="phoneNumber"
+                  placeholder="phoneNumber"
+                  required
                 />
                 <label for="floatingPassword"
                   ><i class="bi bi-telephone"></i>شماره تماس
@@ -49,10 +64,13 @@
               </div>
               <div class="form-floating">
                 <input
+                  onchange="change('password')"
                   type="password"
+                  name="password"
                   class="form-control text-end"
                   id="password"
                   placeholder="password"
+                  required
                 />
                 <label for="floatingPassword"
                   ><i class="bi bi-shield-exclamation"></i>رمز عبور</label
@@ -64,10 +82,13 @@
               </div>
               <div class="form-floating my-3">
                 <input
+                  onchange="change('passwordVerify')"
                   type="password"
                   class="form-control text-end"
                   id="passwordVerify"
+                  name="passwordVerify"
                   placeholder="password"
+                  required
                 />
                 <label for="floatingPassword"
                   ><i class="bi bi-shield-check"></i>تایید رمز عبور</label
@@ -186,6 +207,6 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
-    ></script>
+    ></scrip>
   </body>
 </html>

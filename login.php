@@ -75,7 +75,7 @@
           </form>
 
           <p class="text-center mt-5">
-            <a href="" class="text-muted">اکانت ندارید؟از اینجا ثبت نام کنید</a>
+            <a href="signup.php" class="text-muted">اکانت ندارید؟از اینجا ثبت نام کنید</a>
           </p>
         </div>
       </div>
