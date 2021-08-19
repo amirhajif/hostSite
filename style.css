@@ -131,3 +131,28 @@ footer a {
   width: 100%;
   height: 100%;
 }
+
+.dash-links a {
+  color: #ffffff;
+}
+
+.dash-links ul li:nth-child(even) {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bg-color-white {
+  background-color: #eceff1;
+}
+
+.check-form {
+  overflow: auto;
+  height: 255px;
+}
+
+#works-list input {
+  font-size: 1.375em;
+}
+#user-info-card img {
+  height: 150px;
+}
