@@ -95,3 +95,10 @@ function signin(){
         return false;
     }
 }
+function logout(){
+    let result=window.confirm("آیا مطمئن هستید؟");
+    if (result)
+    {
+        location.replace("checkFile/signout.php");
+    }
+}

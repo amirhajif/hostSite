@@ -196,12 +196,12 @@ if (isset($_SESSION['adminFirstLogin'])){
                           href="admin-dashboard.php"
                   <?php
                   }
-                  else if (isset($_SESSION['active'])){
+                  if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
                       ?>
                           href="index.php"
                   <?php
                   }
-                  else{
+                  if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
                       ?>
                           href="login.php"
                   <?php

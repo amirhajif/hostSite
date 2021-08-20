@@ -1,14 +1,5 @@
 <?php
 session_start();
-try {
-    $link = mysqli_connect("localhost", "root", "", "hostsite");
-} catch (Exception $exception) {
-    echo $exception;
-}
-$query="SELECT * FROM admin WHERE email='$_SESSION[email]'";
-$result=mysqli_query($link,$query);
-$row=mysqli_fetch_array($result);
-$_SESSION['username']=$row['username'];
 ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -30,6 +21,7 @@ $_SESSION['username']=$row['username'];
     />
     <link rel="stylesheet" href="./style.css" />
     <title>یک تایتل</title>
+      <script src="checkFile/fieldValidate.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -128,14 +120,14 @@ $_SESSION['username']=$row['username'];
               <span class="text-decoration-none"
                 ><i class="bi bi-person-check fs-4"></i
                 ><span class="fs-5">
-                  <bdi> <?php echo $_SESSION['username']; ?> </bdi> خوش آمدید
+                  <bdi> امیر حسین  </bdi> خوش آمدید
                 </span></span
               >
             </div>
 
             <div class="col-auto p-2 me-3">
               <a
-                href="checkFile/logout.php"
+                onclick="logout()"
                 class="text-decoration-none btn btn-outline-danger rounded-pill"
                 ><i class="bi bi-box-arrow-left fs-4"></i
                 ><span class="fs-5"> خروج </span></a
@@ -687,20 +679,20 @@ $_SESSION['username']=$row['username'];
                     >اطلاعات حساب
                   </strong>
                   <h3 class="mb-0">اسم کاربری</h3>
-                  <div class="mb-1 text-muted">ادمین سایت</div>
+                  <div class="mb-1 text-muted">amir.h.h</div>
                   <p class="card-text mb-auto">
                     <span>
                       <span><i class="bi bi-info-circle"></i></span>
                       <span>نام و نام خانوادگی:</span>
-                      <span>نام ادمین</span>
+                      <span>امیرحسین حاجی تبار</span>
                       <br />
                       <i class="bi bi-at"></i>
                       <span>ایمیل:</span>
-                      <span>ادرس ایمیل</span>
+                      <span>amirhh@gmail.com</span>
                       <br />
                       <span><i class="bi bi-geo-alt"></i></span>
                       <span>محل سکونت:</span>
-                      <span>محل سکونت</span>
+                      <span>تهران - پاسداران</span>
                       <br />
                       <span><i class="bi bi-hash"></i></span>
                       <span>لینک شبکه های اجتماعی</span>
