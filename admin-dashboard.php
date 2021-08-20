@@ -1,5 +1,10 @@
 <?php
 session_start();
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -149,24 +154,29 @@ session_start();
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title border-bottom">بازدید های امروز</h5>
+                        <?php
+                        $date=date("Y-m-d");
+                        $query="SELECT * FROM visitors WHERE date='$date'";
+                        $result=mysqli_query($link,$query);
+                        ?>
                       <p class="card-text">
                         <span
                           ><i class="bi bi-google fs-5"></i> از طریق گوگل:
-                          <bdi>100</bdi>
+                          <bdi><?php echo $result->num_rows; ?></bdi>
                         </span>
                         <br />
                         <span
                           ><i class="bi bi-globe fs-5"></i> از طریق ادرس:
-                          <bdi>45</bdi>
+                          <bdi><?php echo $result->num_rows; ?></bdi>
                         </span>
                         <br />
                         <span
                           ><i class="bi bi-link-45deg fs-5"></i> از طریق بک
                           لینک:
-                          <bdi>55</bdi>
+                          <bdi><?php echo $result->num_rows; ?></bdi>
                         </span>
                         <span><i class="bi bi-eye fs-5"></i> کل بازدید ها:
-                          <bdi >50</bdi>
+                          <bdi ><?php echo $result->num_rows; ?></bdi>
                         </span>
                       </p>
                       <p class="card-text border-top">
