@@ -5,6 +5,10 @@ if (isset($_SESSION['firstLogin']))
     unset($_SESSION['firstLogin']);
     echo '<script>window.alert("به فروش هاست ما خوش آمدید")</script>';
 }
+if (isset($_SESSION['adminFirstLogin'])){
+    unset($_SESSION['adminFirstLogin']);
+    echo '<script>alert("ادمین خوش آمدی")</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -185,7 +189,24 @@ if (isset($_SESSION['firstLogin']))
                 ><a
                   class="btn btn-outline-primary rounded-pill"
                   style="width: 70px"
-                  href="./login.php"
+                  <?php
+                  if (isset($_SESSION['admin']))
+                  {
+                      ?>
+                          href="admin-dashboard.php"
+                  <?php
+                  }
+                  else if (isset($_SESSION['active'])){
+                      ?>
+                          href="index.php"
+                  <?php
+                  }
+                  else{
+                      ?>
+                          href="login.php"
+                  <?php
+                  }
+                  ?>
                 >
                   ورود
                 </a></span

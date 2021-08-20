@@ -1,3 +1,15 @@
+<?php
+session_start();
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
+$query="SELECT * FROM admin WHERE email='$_SESSION[email]'";
+$result=mysqli_query($link,$query);
+$row=mysqli_fetch_array($result);
+$_SESSION['username']=$row['username'];
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -116,14 +128,14 @@
               <span class="text-decoration-none"
                 ><i class="bi bi-person-check fs-4"></i
                 ><span class="fs-5">
-                  <bdi> "اسم ادمین" </bdi> خوش آمدید
+                  <bdi> <?php echo $_SESSION['username']; ?> </bdi> خوش آمدید
                 </span></span
               >
             </div>
 
             <div class="col-auto p-2 me-3">
               <a
-                href=""
+                href="checkFile/logout.php"
                 class="text-decoration-none btn btn-outline-danger rounded-pill"
                 ><i class="bi bi-box-arrow-left fs-4"></i
                 ><span class="fs-5"> خروج </span></a
