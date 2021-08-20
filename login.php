@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['failSignin']))
+{
+    unset($_SESSION['failSignin']);
+    echo '<script>alert("مشکلی در ورود رخ داده است نام کاربری و رمز عبور را چک کنید")</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -18,6 +26,7 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <title>یک تایتل</title>
+    <script src="checkFile/fieldValidate.js"></script>
   </head>
 
   <body class="bg-dark">
@@ -39,13 +48,15 @@
             >
           </p>
           <div class="mx-auto" id="login-hr">یا</div>
-          <form action="">
+          <form action="checkFile/checkSignIn.php" method="post" onsubmit="return signin()">
             <div class="form-floating form-element mx-auto mt-2 text-center">
               <input
+                onchange="change('email')"
                 type="email"
                 class="form-control"
                 placeholder="ایمیل"
                 id="email"
+                name="email"
                 required
               />
               <label for="email"><i class="bi bi-at"></i>ایمیل</label>
@@ -53,10 +64,12 @@
 
             <div class="form-floating form-element mx-auto my-3 text-center">
               <input
-                type="email"
+                onchange="change('password')"
+                type="password"
                 class="form-control"
                 placeholder="رمز عبور"
                 id="password"
+                name="password"
                 required
               />
               <label for="password"

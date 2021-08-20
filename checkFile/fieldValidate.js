@@ -80,5 +80,18 @@ function signup(){
         alert("لطفا فیلد های مربوط به رمزعبور را چک کنید");
         return false;
     }
-
+}
+function signin(){
+    let email=document.getElementById("email").value;
+    if (!(email.includes("@")))
+    {
+        alert("ایمیل شما اشتباه است");
+        return false;
+    }
+    let password=document.getElementById("password").value;
+    if (password.length < 8 )
+    {
+        alert("فیلد رمزعبور حداقل شامل 8 کاراکتر باشد");
+        return false;
+    }
 }
