@@ -165,9 +165,8 @@ session_start();
                           لینک:
                           <bdi>55</bdi>
                         </span>
-                        <span
-                          ><i class="bi bi-eye fs-5"></i> کل بازدید ها:
-                          <bdi>200</bdi>
+                        <span><i class="bi bi-eye fs-5"></i> کل بازدید ها:
+                          <bdi >50</bdi>
                         </span>
                       </p>
                       <p class="card-text border-top">
