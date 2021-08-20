@@ -66,7 +66,7 @@ if (isset($_SESSION['failSignin']))
               <input
                 onchange="change('password')"
                 type="password"
-                class="form-control"
+                class="form-control text-end"
                 placeholder="رمز عبور"
                 id="password"
                 name="password"
