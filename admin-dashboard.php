@@ -604,7 +604,7 @@ try {
               </ol>
             </div>
             <div
-              class="col-md-5 bg-white mb-1 mt-1 shadow-lg check-form"
+              class="col-md-5 bg-white mb-md-1 mt-md-1 mt-3 shadow-lg check-form"
               id="works-list"
             >
               <div class="list-group">
@@ -737,6 +737,8 @@ try {
                 <div
                   class="
                     col-md-2
+
+                    col-6
                     text-center
                     bg-light
                     rounded-pill

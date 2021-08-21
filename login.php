@@ -32,9 +32,9 @@ if (isset($_SESSION['failSignin']))
   <body class="bg-dark">
     <section class="mt-3" id="login-form">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-md-11 col-10">
-            <img src="./img/logo.png" alt="" />
+        <div class="row text-center justify-content-center">
+          <div class="col-auto me-5 pe-2">
+            <img src="./img/logo.png" class="me-5" alt="" />
           </div>
         </div>
         <div class="row bg-light" id="login-from">

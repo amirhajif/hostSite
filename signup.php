@@ -34,7 +34,7 @@ if (isset($_SESSION['failSignUp']))
       <div class="container bg-light" id="signup-form">
         <div class="row align-items-center justify-content-evenly">
           <div class="col-md-5">
-            <h4 class="text-center fw-bold my-4 my-md-0">فرم ثبت نام</h4>
+            <h4 class="text-center fw-bold my-4">فرم ثبت نام</h4>
             <form action="checkFile/checkSignUp.php" method="post" onsubmit="return signup()">
               <div class="form-floating my-3">
                 <input
@@ -94,8 +94,8 @@ if (isset($_SESSION['failSignUp']))
                   ><i class="bi bi-shield-check"></i>تایید رمز عبور</label
                 >
               </div>
-              <div class="row">
-                <div class="col-md-6">
+              <div class="row my-2">
+                <div class="col-md-7">
                   <div class="form-check pt-md-2">
                     <input
                       class="form-check-input"
@@ -188,7 +188,7 @@ if (isset($_SESSION['failSignUp']))
                     </label>
                   </div>
                 </div>
-                <div class="col-md-6 my-4 my-md-0">
+                <div class="col-md-5 my-4 my-md-0">
                   <button class="btn btn-primary fw-bold" type="submit">
                     ثبت نام
                   </button>
