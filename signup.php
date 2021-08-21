@@ -111,10 +111,9 @@ if (isset($_SESSION['failSignUp']))
                           data-bs-toggle="offcanvas"
                           data-bs-target="#offcanvasBottom"
                           aria-controls="offcanvasTop"
-                          >شرایط</a
-                        > </bdi
-                      >را مطالعه کردم و میپذیرم
-
+                          >
+                              شرایط
+                          </a> </bdi>را مطالعه کردم و میپذیرم
                       <div class="form-text">
                         برای خواندن شرایط روی شرایط کلیک کنید
                       </div>

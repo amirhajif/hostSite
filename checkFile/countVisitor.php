@@ -6,7 +6,7 @@ try {
 }
 $date=date("Y-m-d");
 $ip=$_SERVER['REMOTE_ADDR'];
-$query="SELECT * FROM visitors WHERE date='$date' AND ip='$ip'";
+$query="SELECT * FROM visitors WHERE date='$date' OR ip='$ip'";
 $result=mysqli_query($link,$query);
 if (mysqli_num_rows($result) == 0)
 {

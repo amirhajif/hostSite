@@ -2,17 +2,12 @@
 session_start();
 $email=$_POST['email'];
 $password=$_POST['password'];
-if ($email="amirhh@gmail.com" && $password=='12345678'){
+if ($email=="amirhh@gmail.com" && $password=='12345678'){
     $_SESSION['email']=$email;
     $_SESSION['active']=true;
     $_SESSION['admin']=true;
     $_SESSION['adminFirstLogin']=true;
     header("Location: http://localhost/hostSite");
-    return;
-}
-else{
-    $_SESSION['failSignin']=true;
-    header("Location: http://localhost/hostSite/login.php");
     return;
 }
 try {

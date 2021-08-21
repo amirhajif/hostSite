@@ -202,15 +202,27 @@ try {
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title border-bottom">یوزرهای جدید</h5>
-                      <p class="card-text">
+                        <?php
+                        $query="SELECT * FROM users WHERE registerDate='$date'";
+                        $result=mysqli_query($link,$query);
+                        ?>
+                        <p class="card-text">
                         <span
                           ><i class="bi bi-person-plus fs-5"></i> یوزر های جدید:
-                          <bdi>4</bdi>
+                          <bdi>
+                              <?php echo $result->num_rows; ?>
+                          </bdi>
                         </span>
                         <br />
+                          <?php
+                          $query="SELECT * FROM users";
+                          $result=mysqli_query($link,$query);
+                          ?>
                         <span
                           ><i class="bi bi-people fs-5"></i> کل یوزر ها:
-                          <bdi>200</bdi>
+                          <bdi>
+                              <?php echo $result->num_rows; ?>
+                          </bdi>
                         </span>
                       </p>
                       <p class="card-text border-top">
