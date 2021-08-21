@@ -189,7 +189,7 @@ if (isset($_SESSION['adminFirstLogin'])){
               <span
                 ><a
                   class="btn btn-outline-primary rounded-pill"
-                  style="width: 70px"
+                  style="width: 120px"
                   <?php
                   if (isset($_SESSION['admin']))
                   {
@@ -209,7 +209,25 @@ if (isset($_SESSION['adminFirstLogin'])){
                   }
                   ?>
                 >
-                  ورود
+                      <?php
+                      if (isset($_SESSION['admin']))
+                      {
+                          ?>
+                          پنل مدیریت
+                          <?php
+                      }
+                      if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
+                          ?>
+                          صفحه شخصی
+                          <?php
+                      }
+                      if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
+                          ?>
+                          ورود
+                          <?php
+                      }
+                      ?>
+
                 </a></span
               >
             </div>
