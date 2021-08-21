@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 20, 2021 at 05:40 PM
+-- Generation Time: Aug 21, 2021 at 06:19 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -53,8 +53,9 @@ INSERT INTO `admin` (`email`, `username`, `password`) VALUES
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(40) COLLATE utf8_persian_ci NOT NULL,
-  `phoneNumber` int(20) NOT NULL,
+  `phoneNumber` varchar(20) COLLATE utf8_persian_ci NOT NULL,
   `password` varchar(40) COLLATE utf8_persian_ci NOT NULL,
+  `registerDate` date NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
@@ -62,10 +63,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`email`, `phoneNumber`, `password`) VALUES
-('amir@gmail.com', 0, '0'),
-('amirhajitabar2@gmail.com', 1, '1'),
-('aa@gmail.com', 0, '12345678');
+INSERT INTO `users` (`email`, `phoneNumber`, `password`, `registerDate`) VALUES
+('amirhajitabar2@gmail.com', '09116612648', '12345678', '2021-08-21');
 
 -- --------------------------------------------------------
 
@@ -85,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `visitors` (
 --
 
 INSERT INTO `visitors` (`date`, `ip`) VALUES
-('2021-08-20', '::1');
+('2021-08-21', '::1');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
