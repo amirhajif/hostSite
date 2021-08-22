@@ -29,8 +29,10 @@ if (isset($_SESSION['adminFirstLogin'])){
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <title>یک تایتل</title>
+      <script src="https://kit.fontawesome.com/e95a8ce8bc.js" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="./style.css" />
+    <title>IranHost.Ir | ایران هاست</title>
   </head>
 
   <body>
@@ -71,13 +73,15 @@ if (isset($_SESSION['adminFirstLogin'])){
                   <i class="bi bi-list fs-5"></i><bdi> دسته بندی </bdi>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">ا پشن یک</a></li>
-                  <li><a class="dropdown-item" href="#">اپشن دو</a></li>
-                  <li>
+                    <li><a class="dropdown-item" href="#"><i class="fab fa-windows"></i><span> هاست ویندوز </span></a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fab fa-linux"></i><span> هاست لینوکس </span></a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fab fa-apple"></i><span> هاست مک </span></a></li>
+
+                    <li>
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">اپشن سه</a>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-network-wired"></i><span> دسته بندی کلی </span></a></li>
                   </li>
                 </ul>
               </li>
@@ -454,10 +458,9 @@ if (isset($_SESSION['adminFirstLogin'])){
     <section id="carousel-section">
       <div class="container">
         <div class="row text-center">
-          <h4 class="fw-bold">لورم ایپسوم</h4>
+          <h4 class="fw-bold">هاست های موجود</h4>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است
+              در حال حاصر هاست های ویندوز،لینوکس و مک موجود است
           </p>
         </div>
         <div class="row">
@@ -496,8 +499,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   alt="..."
                 />
                 <div class="carousel-caption d-md-block text-start">
-                  <h5 class="ms-4">لورم ایپسوم</h5>
-                  <p>لورم اپیسوم متن ساختگی</p>
+                  <h5 class="ms-4">هاست های ویندوزی</h5>
                 </div>
               </div>
               <div class="carousel-item">
@@ -507,8 +509,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   alt="..."
                 />
                 <div class="carousel-caption d-md-block">
-                  <h5>لورم ایپسوم</h5>
-                  <p>لورم اپیسوم متن ساختگی</p>
+                  <h5>هاست های لینوکسی</h5>
                 </div>
               </div>
               <div class="carousel-item">
@@ -518,8 +519,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   alt="..."
                 />
                 <div class="carousel-caption d-md-block text-end">
-                  <h5 class="me-5">لورم ایپسوم</h5>
-                  <p class="me-2">لورم اپیسوم متن ساختگی</p>
+                  <h5 class="me-5">هاست های مک</h5>
                 </div>
               </div>
             </div>
@@ -551,7 +551,7 @@ if (isset($_SESSION['adminFirstLogin'])){
         </div>
         <div class="row">
           <div class="col text-center">
-            <button class="btn btn-outline-light mt-4">دکمه چهار</button>
+            <button class="btn btn-outline-light mt-4">رفتن به دسته بندی</button>
           </div>
         </div>
       </div>
@@ -581,14 +581,14 @@ if (isset($_SESSION['adminFirstLogin'])){
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
-                  class="accordion-button"
+                  class="accordion-button fw-bold"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  Accordion Item #1
+                    چجوری هاست رو بخریم؟
                 </button>
               </h2>
               <div
@@ -597,30 +597,22 @@ if (isset($_SESSION['adminFirstLogin'])){
                 aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                <div class="accordion-body text-muted">
+                    کاری نداره فقط کافیه که وارد سایت ما و حسابت بشی،هاست مورد نظرتو انتخاب کنی و بعدش به سبد خریدت بری و خریدتو انجام بدی،اگه اکانت نداری همین حالا ثبت نام کن !
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button collapsed fw-bold"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo"
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Accordion Item #2
+                    هاست چجوری به دستم میرسه؟
                 </button>
               </h2>
               <div
@@ -629,30 +621,23 @@ if (isset($_SESSION['adminFirstLogin'])){
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                <div class="accordion-body text-muted">
+                    بعد خرید،یه یوزر نیم و پسوورد به ایمیلت ارسال میشه که با اون باید به کامپیوتر هاستت وصل بشی(از طریق ریموت دسکتاپ)
                 </div>
               </div>
             </div>
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button collapsed fw-bold"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseThree"
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  Accordion Item #3
+                    ایمیل ارسالی یوزر پاس رو ندارم یا گم کردم!
                 </button>
               </h2>
               <div
@@ -661,19 +646,37 @@ if (isset($_SESSION['adminFirstLogin'])){
                 aria-labelledby="headingThree"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                <div class="accordion-body text-muted">
+                    نگران نباش کافیه با بخش پشتیبانی ما تماس بگیری و مشکلت رو با اونا مطرح کنی
                 </div>
               </div>
             </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                خرید کردم ولی لینکی برام نیومد
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body text-muted">
+                  بعضی وقتا بدلیل مشکلات بانکی و درگاه ممکنه عملیات پرداخت با مشکل مواجه بشه،شناسه پیگیری و زمان پرداخت و نوع محصول رو به پشتیبانی بگید تا پیگیری کنن
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
