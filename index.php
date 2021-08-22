@@ -81,7 +81,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-network-wired"></i><span> دسته بندی کلی </span></a></li>
+                    <li><a class="dropdown-item" href=""><i class="fas fa-network-wired"></i><span> دسته بندی کلی </span></a></li>
                   </li>
                 </ul>
               </li>
@@ -316,10 +316,12 @@ if (isset($_SESSION['adminFirstLogin'])){
       <div class="container mt-lg-0">
         <div class="row align-items-center">
           <div class="col-md-5">
-            <p class="fw-bold lead my-3">
-ایران هاست دیگه چه ویژگی هایی داره؟            </p>
+            <p class="fw-bold lead my-3">ایران هاست دیگه چه ویژگی هایی داره؟</p>
             <p class="lead text-secondary">
-              ما تو ایران هاست با بیش از 10 سال سابقه، از بهترین نیروی های متخصص و تحصیل کرده استفاده کردیم تا بتونیم بهترین کیفیت رو به مشتری هامون ارائه بدیم همچنین از درگاه های ایمن و مطئمن استفاده میکنیم که امنیت حساب بانکی شمارو تضمین کنه و در اخر پشتیبانی 24 ساعته!
+              ما تو ایران هاست با بیش از 10 سال سابقه، از بهترین نیروی های متخصص
+              و تحصیل کرده استفاده کردیم تا بتونیم بهترین کیفیت رو به مشتری
+              هامون ارائه بدیم همچنین از درگاه های ایمن و مطئمن استفاده میکنیم
+              که امنیت حساب بانکی شمارو تضمین کنه و در اخر پشتیبانی 24 ساعته!
             </p>
           </div>
           <div class="col-md-7">
@@ -327,35 +329,38 @@ if (isset($_SESSION['adminFirstLogin'])){
               <div class="col-md-6">
                 <div class="card text-center shadow mt-3">
                   <div class="card-body">
-                  <i class="fas fa-user-graduate icon fa-2x"></i>
+                    <i class="fas fa-user-graduate icon fa-2x"></i>
                     <p class="lead card-title fw-bold my-3">کادر تحصیل کرده</p>
                     <p class="card-text text-muted">
-کادر تحصیل کرده دارای مدرک تخصصی                    </p>
+                      کادر تحصیل کرده دارای مدرک تخصصی
+                    </p>
                   </div>
                 </div>
 
                 <div class="card text-center shadow mt-4">
                   <div class="card-body">
-                  <i class="fas fa-money-check-alt icon fa-2x"></i>                    <p class="lead card-title fw-bold my-3">درگاه ایمن</p>
+                    <i class="fas fa-money-check-alt icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">درگاه ایمن</p>
                     <p class="card-text text-muted">
-درگاه ایمن برای حفظ اطلاعات بانکی شما                    </p>
+                      درگاه ایمن برای حفظ اطلاعات بانکی شما
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="card text-center shadow mt-5">
                   <div class="card-body">
-                  <i class="fas fa-certificate icon fa-2x"></i>                    <p class="lead card-title fw-bold my-3">سابقه بالا</p>
-                    <p class="card-text text-muted">
-بیش از 10 سال سابقه                    </p>
+                    <i class="fas fa-certificate icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">سابقه بالا</p>
+                    <p class="card-text text-muted">بیش از 10 سال سابقه</p>
                   </div>
                 </div>
 
                 <div class="card text-center shadow mt-4">
                   <div class="card-body">
-                  <i class="fas fa-headset fa-2x icon "></i>                    <p class="lead card-title fw-bold my-3">پشتیبانی </p>
-                    <p class="card-text text-muted">
-پشتیبانی 24 ساعته                    </p>
+                    <i class="fas fa-headset fa-2x icon"></i>
+                    <p class="lead card-title fw-bold my-3">پشتیبانی</p>
+                    <p class="card-text text-muted">پشتیبانی 24 ساعته</p>
                   </div>
                 </div>
               </div>
@@ -397,12 +402,23 @@ if (isset($_SESSION['adminFirstLogin'])){
                 <p class="card-text text-muted">
                   اشتراک یک ماهه به همراه 10 روز هدیه
                 </p>
-                <p class="card-text text-muted"><span> قیمت(تومان): </span> <span>20,000</span> </p>
-                <p class="card-text text-muted"><span> 8GB </span> <span>:RAM</span></p>
-                <p class="card-text text-muted"><span> Intel Core i7 </span> <span>:CPU</span></p>
-                <p class="card-text text-muted"><span> 1TB </span> <span>:ROM</span></p>
+                <p class="card-text text-muted">
+                  <span> قیمت(تومان): </span> <span>20,000</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> 8GB </span> <span>:RAM</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> Intel Core i7 </span> <span>:CPU</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> 1TB </span> <span>:ROM</span>
+                </p>
                 <br />
-                <button class="btn btn-primary"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
+                <button class="btn btn-primary">
+                  <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
+                  خرید
+                </button>
               </div>
             </div>
           </div>
@@ -414,13 +430,25 @@ if (isset($_SESSION['adminFirstLogin'])){
                 <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
                 <p class="card-text black-card-text">
-اشتراک دوماهه به همراه 20 روز هدیه                </p>
-                <p class="card-text black-card-text "><span> قیمت(تومان): </span> <span>35,000</span> </p>
-                <p class="card-text black-card-text"><span> 12GB </span> <span>:RAM</span></p>
-                <p class="card-text black-card-text"><span> Intel Core i7 </span> <span>:CPU</span></p>
-                <p class="card-text black-card-text"><span> 1TB + 128 SSD </span> <span>:ROM</span></p>
+                  اشتراک دوماهه به همراه 20 روز هدیه
+                </p>
+                <p class="card-text black-card-text">
+                  <span> قیمت(تومان): </span> <span>35,000</span>
+                </p>
+                <p class="card-text black-card-text">
+                  <span> 12GB </span> <span>:RAM</span>
+                </p>
+                <p class="card-text black-card-text">
+                  <span> Intel Core i7 </span> <span>:CPU</span>
+                </p>
+                <p class="card-text black-card-text">
+                  <span> 1TB + 128 SSD </span> <span>:ROM</span>
+                </p>
                 <br />
-                <button class="btn btn-outline-light"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
+                <button class="btn btn-outline-light">
+                  <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
+                  خرید
+                </button>
               </div>
             </div>
           </div>
@@ -429,16 +457,30 @@ if (isset($_SESSION['adminFirstLogin'])){
               <div class="card-body">
                 <i class="fab fa-apple icon fa-2x"></i>
                 <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک اوس:12(Montrey)</p>
+                <p class="lead card-title fw-bold my-3">
+                  نسخه مک اوس:12(Montrey)
+                </p>
 
                 <p class="card-text text-muted">
-اشتراک یک ماهه به همراه 10 روز هدیه                </p>
-                <p class="card-text text-muted"><span> قیمت(تومان): </span> <span>25,000</span> </p>
-                <p class="card-text text-muted"><span> 8GB </span> <span>:RAM</span></p>
-                <p class="card-text text-muted"><span> M1 </span> <span>:CPU</span></p>
-                <p class="card-text text-muted"><span> 256 SSD </span> <span>:ROM</span></p>
+                  اشتراک یک ماهه به همراه 10 روز هدیه
+                </p>
+                <p class="card-text text-muted">
+                  <span> قیمت(تومان): </span> <span>25,000</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> 8GB </span> <span>:RAM</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> M1 </span> <span>:CPU</span>
+                </p>
+                <p class="card-text text-muted">
+                  <span> 256 SSD </span> <span>:ROM</span>
+                </p>
                 <br />
-                <button class="btn btn-primary"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
+                <button class="btn btn-primary">
+                  <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
+                  خرید
+                </button>
               </div>
             </div>
           </div>
@@ -560,6 +602,7 @@ if (isset($_SESSION['adminFirstLogin'])){
         </div>
       </div>
     </section>
+    
     <div style="height: 150px; overflow: hidden">
       <svg
         viewBox="0 0 500 150"

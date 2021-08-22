@@ -38,6 +38,10 @@
   color: #ffffff;
 }
 
+.blue-bg {
+  background-color: #0d6efd;
+}
+
 .black-card-text {
   color: #e0e0e0;
 }
@@ -155,4 +159,8 @@ footer a {
 }
 #user-info-card img {
   height: 125px;
+}
+
+.dropdown-menu {
+  z-index: 1000;
 }
