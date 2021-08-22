@@ -37,7 +37,7 @@ if (isset($_SESSION['adminFirstLogin'])){
 
   <body>
     <header class="shadow">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light align-items-center">
         <div class="container">
           <a class="navbar-brand lead" href="#">
             <img src="./img/logo.png" alt="" height="65px" />
@@ -161,7 +161,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                 </div>
               </li>
               <li class="nav-item">
-                <form action="" class="d-flex mt-1 ms-4">
+                <form action="" class="d-flex mt-md-1 ms-md-4 my-md-0 my-4">
                   <input
                     type="text"
                     class="form-control"
@@ -244,16 +244,12 @@ if (isset($_SESSION['adminFirstLogin'])){
       <div class="container">
         <div class="row align-items-center">
           <div class="col-sm-6 mt-5 mt-lg-0">
-            <h4 class="fw-bold">لورم ایپسوم متن ساختگی</h4>
-            <h5 class="fw-bold text-primary my-4">MySite</h5>
+            <h4 class="fw-bold"><span class="text-primary">ایران </span><span class="text-secondary">هاست</span></h4>
             <p class="lead text-secondary">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-              ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-              و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+              ایران هاست یه سایت ارائه دهنده هاسته که میتونی خیلی راحت هاست مناسب خودتو پیدا کنی و سایت خودتو بسانی،اگه عضو سایت ما نیستی میتونی از دکمه زیر ثبت نام کنی یا اینکه از اون یکی دکمه محصولات مارو ببینی
             </p>
-            <button class="btn btn-primary">دکمه یک</button>
-            <button class="btn btn-outline-secondary ms-4">دکمه دو</button>
+            <a class="btn btn-primary" href="./signup.php">ثبت نام</a>
+            <a class="btn btn-outline-secondary ms-4">دیدن محصولات</a>
           </div>
           <div class="col-sm-6">
             <img src="./img/header-img.png" alt="" class="img-fluid" />
@@ -266,6 +262,12 @@ if (isset($_SESSION['adminFirstLogin'])){
     <br />
     <section>
       <div class="container">
+        <div class="row mt-2 mb-3 text-center">
+          <hr>
+          <br>
+          <h4 class="fw-bold py-4">چه ویژگی هایی هاست های مارو منحصر به فرد کرده؟</h4>
+          <hr>
+        </div>
         <div class="row text-center justify-content-evenly">
           <div class="col-md-2 mt-5 mt-sm-0">
             <img src="img/server.svg" width="150" class="img-fluid" alt="" />
@@ -314,59 +316,46 @@ if (isset($_SESSION['adminFirstLogin'])){
       <div class="container mt-lg-0">
         <div class="row align-items-center">
           <div class="col-md-5">
-            <i class="bi bi-stack fs-2 icon mt-2"></i>
             <p class="fw-bold lead my-3">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-            </p>
+ایران هاست دیگه چه ویژگی هایی داره؟            </p>
             <p class="lead text-secondary">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-              ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-              و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+              ما تو ایران هاست با بیش از 10 سال سابقه، از بهترین نیروی های متخصص و تحصیل کرده استفاده کردیم تا بتونیم بهترین کیفیت رو به مشتری هامون ارائه بدیم همچنین از درگاه های ایمن و مطئمن استفاده میکنیم که امنیت حساب بانکی شمارو تضمین کنه و در اخر پشتیبانی 24 ساعته!
             </p>
-            <button class="btn btn-outline-dark">دکمه سه</button>
           </div>
           <div class="col-md-7">
             <div class="row">
               <div class="col-md-6">
                 <div class="card text-center shadow mt-3">
                   <div class="card-body">
-                    <i class="bi bi-layers fs-2 icon"></i>
-                    <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                  <i class="fas fa-user-graduate icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">کادر تحصیل کرده</p>
                     <p class="card-text text-muted">
-                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                    </p>
+کادر تحصیل کرده دارای مدرک تخصصی                    </p>
                   </div>
                 </div>
 
                 <div class="card text-center shadow mt-4">
                   <div class="card-body">
-                    <i class="bi bi-layers fs-2 icon"></i>
-                    <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                  <i class="fas fa-money-check-alt icon fa-2x"></i>                    <p class="lead card-title fw-bold my-3">درگاه ایمن</p>
                     <p class="card-text text-muted">
-                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                    </p>
+درگاه ایمن برای حفظ اطلاعات بانکی شما                    </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="card text-center shadow mt-5">
                   <div class="card-body">
-                    <i class="bi bi-layers fs-2 icon"></i>
-                    <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                  <i class="fas fa-certificate icon fa-2x"></i>                    <p class="lead card-title fw-bold my-3">سابقه بالا</p>
                     <p class="card-text text-muted">
-                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                    </p>
+بیش از 10 سال سابقه                    </p>
                   </div>
                 </div>
 
                 <div class="card text-center shadow mt-4">
                   <div class="card-body">
-                    <i class="bi bi-layers fs-2 icon"></i>
-                    <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                  <i class="fas fa-headset fa-2x icon "></i>                    <p class="lead card-title fw-bold my-3">پشتیبانی </p>
                     <p class="card-text text-muted">
-                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                    </p>
+پشتیبانی 24 ساعته                    </p>
                   </div>
                 </div>
               </div>
@@ -392,67 +381,64 @@ if (isset($_SESSION['adminFirstLogin'])){
     <section>
       <div class="container">
         <div class="row text-center">
-          <h4 class="fw-bold">لورم ایپسوم متن ساختگی</h4>
+          <h4 class="fw-bold">محصولات پرفروش ما</h4>
           <p class="lead text-muted">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است
+            3 محصولی که کاربران تو یک ماه گذشته بیشترین خرید رو از ما داشتن
           </p>
         </div>
         <div class="row align-items-center">
           <div class="col-md-4">
             <div class="card text-center shadow mt-4 py-4">
               <div class="card-body">
-                <i class="bi bi-layers fs-2 icon"></i>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                <i class="fab fa-linux fa-2x icon"></i>
+                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                <p class="lead card-title fw-bold my-3">نسخه لینوکس:اوبونتو</p>
 
                 <p class="card-text text-muted">
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                  اشتراک یک ماهه به همراه 10 روز هدیه
                 </p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
+                <p class="card-text text-muted"><span> قیمت(تومان): </span> <span>20,000</span> </p>
+                <p class="card-text text-muted"><span> 8GB </span> <span>:RAM</span></p>
+                <p class="card-text text-muted"><span> Intel Core i7 </span> <span>:CPU</span></p>
+                <p class="card-text text-muted"><span> 1TB </span> <span>:ROM</span></p>
                 <br />
-                <button class="btn btn-primary">خرید</button>
+                <button class="btn btn-primary"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card text-center shadow mt-4 py-5 card-black">
               <div class="card-body">
-                <i class="bi bi-layers fs-2 icon"></i>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                <i class="fab fa-windows icon fa-2x"></i>
+                <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
                 <p class="card-text black-card-text">
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                </p>
-                <p class="card-text black-card-text">لورم</p>
-                <p class="card-text black-card-text">لورم</p>
-                <p class="card-text black-card-text">لورم</p>
-                <p class="card-text black-card-text">لورم</p>
+اشتراک دوماهه به همراه 20 روز هدیه                </p>
+                <p class="card-text black-card-text "><span> قیمت(تومان): </span> <span>35,000</span> </p>
+                <p class="card-text black-card-text"><span> 12GB </span> <span>:RAM</span></p>
+                <p class="card-text black-card-text"><span> Intel Core i7 </span> <span>:CPU</span></p>
+                <p class="card-text black-card-text"><span> 1TB + 128 SSD </span> <span>:ROM</span></p>
                 <br />
-                <button class="btn btn-outline-light">خرید</button>
+                <button class="btn btn-outline-light"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card text-center shadow mt-4 py-4">
               <div class="card-body">
-                <i class="bi bi-layers fs-2 icon"></i>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
-                <p class="lead card-title fw-bold my-3">لورم ایپسوم</p>
+                <i class="fab fa-apple icon fa-2x"></i>
+                <p class="lead card-title fw-bold my-3">هاست مک</p>
+                <p class="lead card-title fw-bold my-3">نسخه مک اوس:12(Montrey)</p>
 
                 <p class="card-text text-muted">
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                </p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
-                <p class="card-text text-muted">لورم</p>
+اشتراک یک ماهه به همراه 10 روز هدیه                </p>
+                <p class="card-text text-muted"><span> قیمت(تومان): </span> <span>25,000</span> </p>
+                <p class="card-text text-muted"><span> 8GB </span> <span>:RAM</span></p>
+                <p class="card-text text-muted"><span> M1 </span> <span>:CPU</span></p>
+                <p class="card-text text-muted"><span> 256 SSD </span> <span>:ROM</span></p>
                 <br />
-                <button class="btn btn-primary">خرید</button>
+                <button class="btn btn-primary"><span><i class="bi bi-cart-plus"></i></span> افزودن به سید خرید </button>
               </div>
             </div>
           </div>
@@ -680,7 +666,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   aria-expanded="false"
                   aria-controls="collapseFour"
                 >
-                خرید کردم ولی لینکی برام نیومد
+                خرید کردم ولی لینکی برام نیومد!
                 </button>
               </h2>
               <div
@@ -717,9 +703,9 @@ if (isset($_SESSION['adminFirstLogin'])){
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-md-6">
-            <h3 class="fw-bold">MySite</h3>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-            <a href=""><i class="bi bi-instagram fs-3 ms-5"></i></a>
+            <h3 class="fw-bold">ایران هاست</h3>
+            <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+            <a href=""><i class="bi bi-instagram fs-3"></i></a>
             <a href=""><i class="bi bi-facebook fs-3 ms-5"></i></a>
             <a href=""><i class="bi bi-linkedin fs-3 ms-5"></i></a>
             <a href=""><i class="bi bi-telegram fs-3 ms-5"></i></a>
@@ -727,33 +713,29 @@ if (isset($_SESSION['adminFirstLogin'])){
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-4 mt-5 mt-sm-0">
-                <h6 class="fw-bold">لورم ایپسوم</h6>
+                <h6 class="fw-bold">دانلود اپلیکیشن سایت</h6>
                 <hr />
                 <ul class="list-unstyled">
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
+                  <li><a href=""><span> دانلود برای اندروید </span> <span><i class="fab fa-google-play"></i></span> </a></li>
+                  <li class="mt-3"><a href=""><span> دانلود برای ای او اس </span> <span><i class="fab fa-app-store-ios"></i></span> </a></li>
+
                 </ul>
               </div>
               <div class="col-md-4 mt-5 mt-sm-0">
-                <h6 class="fw-bold">لورم ایپسوم</h6>
+                <h6 class="fw-bold">پشتیبانی و واحد فنی</h6>
                 <hr />
                 <ul class="list-unstyled">
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
+                  <li><a href="">پشتیبانی</a></li>
+                  <li class="my-3"><a href="">گزارش مشکل</a></li>
+                  <li><a href="">ارتباط با واحد فنی</a></li>
                 </ul>
               </div>
               <div class="col-md-4 mt-5 mt-sm-0">
-                <h6 class="fw-bold">لورم ایپسوم</h6>
+                <h6 class="fw-bold">راه ارتباطی و آدرس</h6>
                 <hr />
                 <ul class="list-unstyled">
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
-                  <li><a href="">لورم</a></li>
+                  <li><a href=""><span>تلفن:</span> <span dir="ltr">021-12345678</span> </a></li>
+                  <li class="my-3"><a href=""><span>آدرس:</span> <span>تهران،تجریش،ساختمان ایران هاست</span> </a></a></li>
                 </ul>
               </div>
             </div>
