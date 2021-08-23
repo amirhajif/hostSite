@@ -393,7 +393,23 @@ if (isset($_SESSION['adminFirstLogin'])){
         </div>
         <div class="row align-items-center">
           <div class="col-md-4">
-            <div class="card text-center shadow mt-4 py-4">
+            <div class="card text-center shadow mt-4 py-4 position-relative">
+            <span
+                class="
+                  position-absolute
+                  top-0
+                  start-50
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-danger
+                  fw-bold
+                  fs-6
+                "
+              >
+                <span>Code:</span><span>hl-1</span>
+              </span>
+
               <div class="card-body">
                 <i class="fab fa-linux fa-2x icon"></i>
                 <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
@@ -423,7 +439,23 @@ if (isset($_SESSION['adminFirstLogin'])){
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card text-center shadow mt-4 py-5 card-black">
+            <div class="card text-center shadow mt-4 py-5 card-black position-relative">
+            <span
+                class="
+                  position-absolute
+                  top-0
+                  start-50
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-dark
+                  fw-bold
+                  fs-6
+                "
+              >
+                <span>Code:</span><span>hw-2</span>
+              </span>
+
               <div class="card-body">
                 <i class="fab fa-windows icon fa-2x"></i>
                 <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
@@ -445,7 +477,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   <span> 1TB + 128 SSD </span> <span>:ROM</span>
                 </p>
                 <br />
-                <button class="btn btn-outline-light">
+                <button class="btn btn-light">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
                 </button>
@@ -453,7 +485,23 @@ if (isset($_SESSION['adminFirstLogin'])){
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card text-center shadow mt-4 py-4">
+            <div class="card text-center shadow mt-4 py-4 position-relative">
+            <span
+                class="
+                  position-absolute
+                  top-0
+                  start-50
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-danger
+                  fw-bold
+                  fs-6
+                "
+              >
+                <span>Code:</span><span>hm-1</span>
+              </span>
+
               <div class="card-body">
                 <i class="fab fa-apple icon fa-2x"></i>
                 <p class="lead card-title fw-bold my-3">هاست مک</p>
@@ -786,6 +834,7 @@ if (isset($_SESSION['adminFirstLogin'])){
         </div>
       </div>
     </footer>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
