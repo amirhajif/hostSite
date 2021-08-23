@@ -419,13 +419,13 @@ if (isset($_SESSION['adminFirstLogin'])){
                   اشتراک یک ماهه به همراه 10 روز هدیه
                 </p>
                 <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>20,000</span>
+                  <span> قیمت(تومان): </span> <span>15,000</span>
                 </p>
                 <p class="card-text text-muted">
                   <span> 8GB </span> <span>:RAM</span>
                 </p>
                 <p class="card-text text-muted">
-                  <span> Intel Core i7 </span> <span>:CPU</span>
+                  <span> Intel Core i5 </span> <span>:CPU</span>
                 </p>
                 <p class="card-text text-muted">
                   <span> 1TB </span> <span>:ROM</span>
@@ -468,13 +468,13 @@ if (isset($_SESSION['adminFirstLogin'])){
                   <span> قیمت(تومان): </span> <span>35,000</span>
                 </p>
                 <p class="card-text black-card-text">
-                  <span> 12GB </span> <span>:RAM</span>
+                  <span> 8GB </span> <span>:RAM</span>
                 </p>
                 <p class="card-text black-card-text">
                   <span> Intel Core i7 </span> <span>:CPU</span>
                 </p>
                 <p class="card-text black-card-text">
-                  <span> 1TB + 128 SSD </span> <span>:ROM</span>
+                  <span> 1TB</span> <span>:ROM</span>
                 </p>
                 <br />
                 <button class="btn btn-light">
@@ -513,7 +513,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   اشتراک یک ماهه به همراه 10 روز هدیه
                 </p>
                 <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>25,000</span>
+                  <span> قیمت(تومان): </span> <span>35,000</span>
                 </p>
                 <p class="card-text text-muted">
                   <span> 8GB </span> <span>:RAM</span>
@@ -522,7 +522,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   <span> M1 </span> <span>:CPU</span>
                 </p>
                 <p class="card-text text-muted">
-                  <span> 256 SSD </span> <span>:ROM</span>
+                  <span>  SSD 256 </span> <span>:ROM</span>
                 </p>
                 <br />
                 <button class="btn btn-primary">
