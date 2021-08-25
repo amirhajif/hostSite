@@ -1,3 +1,12 @@
+<?php
+session_start();
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
+mysqli_query($link,"SET NAMES utf8");
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -67,18 +76,18 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="window.php"
                       ><i class="fab fa-windows"></i
                       ><span> هاست ویندوز </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="linux.php"
                       ><i class="fab fa-linux"></i><span> هاست لینوکس </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="mac.php"
                       ><i class="fab fa-apple"></i><span> هاست مک </span></a
                     >
                   </li>
@@ -201,10 +210,46 @@
               </span>
               <span
                 ><a
-                  class="btn btn-outline-primary rounded-pill"
-                  style="width: 120px"
-                  >ورود</a
-                ></span
+                          class="btn btn-outline-primary rounded-pill"
+                          style="width: 120px"
+                  <?php
+                  if (isset($_SESSION['admin']))
+                  {
+                      ?>
+                      href="admin-dashboard.php"
+                      <?php
+                  }
+                  if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
+                      ?>
+                      href="index.php"
+                      <?php
+                  }
+                  if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
+                      ?>
+                      href="login.php"
+                      <?php
+                  }
+                  ?>
+                >
+                      <?php
+                      if (isset($_SESSION['admin']))
+                      {
+                          ?>
+                          پنل مدیریت
+                          <?php
+                      }
+                      if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
+                          ?>
+                          صفحه شخصی
+                          <?php
+                      }
+                      if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
+                          ?>
+                          ورود
+                          <?php
+                      }
+                      ?>
+                </a></span
               >
             </div>
           </div>
@@ -236,27 +281,32 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-1</span>
+                   <?php
+                   $query="SELECT * FROM linuxhost WHERE code='hl-1' ";
+                   $result=mysqli_query($link,$query);
+                   $row=mysqli_fetch_array($result);
+                   ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
               <div class="card-body">
                 <i class="fab fa-linux icon fa-2x"></i>
                 <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:اوبونتو</p>
+                <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
                 <p class="card-text text-muted">
-                  اشتراک یک ماهه به همراه 10 روز هدیه
+                    <?php echo $row['title'];?>
                 </p>
                 <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>15,000</span>
+                  <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
                 </p>
                 <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
+                  <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
                 </p>
                 <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
+                  <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
                 </p>
                 <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
+                  <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
                 </p>
                 <br />
                 <button class="btn btn-primary">
@@ -281,29 +331,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-2</span>
+                <?php
+                $query="SELECT * FROM linuxhost WHERE code='hl-2' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-linux icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:اوبونتو</p>
+                <div class="card-body">
+                    <i class="fab fa-linux icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                    <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
-                <p class="card-text text-muted">
-                  اشتراک دو ماهه به همراه 20 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>25,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -326,29 +381,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-3</span>
+                <?php
+                $query="SELECT * FROM linuxhost WHERE code='hl-3' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-linux icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:اوبونتو</p>
+                <div class="card-body">
+                    <i class="fab fa-linux icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                    <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
-                <p class="card-text text-muted">
-                  اشتراک سه ماهه به همراه 30 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>45,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -373,29 +433,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-4</span>
+               <?php
+               $query="SELECT * FROM linuxhost WHERE code='hl-4' ";
+               $result=mysqli_query($link,$query);
+               $row=mysqli_fetch_array($result);
+               ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-linux icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:کالی</p>
+                <div class="card-body">
+                    <i class="fab fa-linux icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                    <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
-                <p class="card-text text-muted">
-                  اشتراک یک ماهه به همراه 10 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>15,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -418,29 +483,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-5</span>
+                <?php
+                $query="SELECT * FROM linuxhost WHERE code='hl-5' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-linux icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:کالی</p>
+                <div class="card-body">
+                    <i class="fab fa-linux icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                    <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
-                <p class="card-text text-muted">
-                  اشتراک دو ماهه به همراه 20 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>25,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -463,29 +533,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hl-6</span>
+                <?php
+                $query="SELECT * FROM linuxhost WHERE code='hl-6' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code'];?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-linux icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
-                <p class="lead card-title fw-bold my-3">نسخه لینوکس:کالی</p>
+                <div class="card-body">
+                    <i class="fab fa-linux icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست لینوکس</p>
+                    <p class="lead card-title fw-bold my-3">نسخه لینوکس:<?php echo $row['version'];?></p>
 
-                <p class="card-text text-muted">
-                  اشتراک سه ماهه به همراه 30 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>45,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 1TB </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];?></span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید

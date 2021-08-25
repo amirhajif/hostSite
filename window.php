@@ -76,18 +76,18 @@ mysqli_query($link,"SET NAMES utf8");
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="window.php"
                       ><i class="fab fa-windows"></i
                       ><span> هاست ویندوز </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="linux.php"
                       ><i class="fab fa-linux"></i><span> هاست لینوکس </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="mac.php"
                       ><i class="fab fa-apple"></i><span> هاست مک </span></a
                     >
                   </li>

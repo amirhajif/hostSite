@@ -76,18 +76,18 @@ mysqli_query($link,"SET NAMES utf8");
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="window.php"
                       ><i class="fab fa-windows"></i
                       ><span> هاست ویندوز </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="linux.php"
                       ><i class="fab fa-linux"></i><span> هاست لینوکس </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="mac.php"
                       ><i class="fab fa-apple"></i><span> هاست مک </span></a
                     >
                   </li>
@@ -290,8 +290,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
@@ -340,8 +340,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
@@ -390,8 +390,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
@@ -442,8 +442,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
@@ -492,8 +492,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
@@ -542,8 +542,8 @@ mysqli_query($link,"SET NAMES utf8");
               </span>
                 <div class="card-body">
                     <i class="fab fa-windows icon fa-2x"></i>
-                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
-                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
+                    <p class="lead card-title fw-bold my-3">هاست مک</p>
+                    <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
 
                     <p class="card-text text-muted">
                         <?php echo $row['title'];  ?>
