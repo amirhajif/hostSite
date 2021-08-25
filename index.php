@@ -73,9 +73,9 @@ if (isset($_SESSION['adminFirstLogin'])){
                   <i class="bi bi-list fs-5"></i><bdi> دسته بندی </bdi>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#"><i class="fab fa-windows"></i><span> هاست ویندوز </span></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fab fa-linux"></i><span> هاست لینوکس </span></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fab fa-apple"></i><span> هاست مک </span></a></li>
+                    <li><a class="dropdown-item" href="window.php"><i class="fab fa-windows"></i><span> هاست ویندوز </span></a></li>
+                    <li><a class="dropdown-item" href="linux.php"><i class="fab fa-linux"></i><span> هاست لینوکس </span></a></li>
+                    <li><a class="dropdown-item" href="mac.php"><i class="fab fa-apple"></i><span> هاست مک </span></a></li>
 
                     <li>
                     <hr class="dropdown-divider" />
@@ -191,7 +191,8 @@ if (isset($_SESSION['adminFirstLogin'])){
                 </span>
               </span>
               <span
-                ><a
+                >
+                  <a
                   class="btn btn-outline-primary rounded-pill"
                   style="width: 120px"
                   <?php
