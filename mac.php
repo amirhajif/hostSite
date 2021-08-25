@@ -1,3 +1,12 @@
+<?php
+session_start();
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
+mysqli_query($link,"SET NAMES utf8");
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -201,10 +210,46 @@
               </span>
               <span
                 ><a
-                  class="btn btn-outline-primary rounded-pill"
-                  style="width: 120px"
-                  >ورود</a
-                ></span
+                          class="btn btn-outline-primary rounded-pill"
+                          style="width: 120px"
+                  <?php
+                  if (isset($_SESSION['admin']))
+                  {
+                      ?>
+                      href="admin-dashboard.php"
+                      <?php
+                  }
+                  if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
+                      ?>
+                      href="index.php"
+                      <?php
+                  }
+                  if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
+                      ?>
+                      href="login.php"
+                      <?php
+                  }
+                  ?>
+                >
+                      <?php
+                      if (isset($_SESSION['admin']))
+                      {
+                          ?>
+                          پنل مدیریت
+                          <?php
+                      }
+                      if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
+                          ?>
+                          صفحه شخصی
+                          <?php
+                      }
+                      if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
+                          ?>
+                          ورود
+                          <?php
+                      }
+                      ?>
+                </a></span
               >
             </div>
           </div>
@@ -236,29 +281,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-1</span>
+                <?php
+                $query="SELECT * FROM machost WHERE code='hm-1' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک یک ماهه به همراه 10 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>35,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> M1 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -281,29 +331,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-2</span>
+                 <?php
+                 $query="SELECT * FROM machost WHERE code='hm-2' ";
+                 $result=mysqli_query($link,$query);
+                 $row=mysqli_fetch_array($result);
+                 ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک دو ماهه به همراه 20 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>65,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> M1 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -326,29 +381,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-3</span>
+                 <?php
+                 $query="SELECT * FROM machost WHERE code='hm-3' ";
+                 $result=mysqli_query($link,$query);
+                 $row=mysqli_fetch_array($result);
+                 ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک سه ماهه به همراه 30 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>105,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> M1 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -373,29 +433,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-4</span>
+                <?php
+                $query="SELECT * FROM machost WHERE code='hm-4' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک یک ماهه به همراه 10 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>30,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -418,29 +483,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-5</span>
+                 <?php
+                 $query="SELECT * FROM machost WHERE code='hm-5' ";
+                 $result=mysqli_query($link,$query);
+                 $row=mysqli_fetch_array($result);
+                 ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک دو ماهه به همراه 20 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>55,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
@@ -463,29 +533,34 @@
                   fs-6
                 "
               >
-                <span>Code:</span><span>hm-6</span>
+                <?php
+                $query="SELECT * FROM machost WHERE code='hm-6' ";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                ?>
+                <span>Code:</span><span><?php echo $row['code']; ?></span>
               </span>
-              <div class="card-body">
-                <i class="fab fa-apple icon fa-2x"></i>
-                <p class="lead card-title fw-bold my-3">هاست مک</p>
-                <p class="lead card-title fw-bold my-3">نسخه مک:12(Montrey)</p>
+                <div class="card-body">
+                    <i class="fab fa-windows icon fa-2x"></i>
+                    <p class="lead card-title fw-bold my-3">هاست ویندوز</p>
+                    <p class="lead card-title fw-bold my-3">نسخه ویندوز:10</p>
 
-                <p class="card-text text-muted">
-                  اشتراک سه ماهه به همراه 30 روز هدیه
-                </p>
-                <p class="card-text text-muted">
-                  <span> قیمت(تومان): </span> <span>90,000</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 8GB </span> <span>:RAM</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> Intel Core i5 </span> <span>:CPU</span>
-                </p>
-                <p class="card-text text-muted">
-                  <span> 256SSD </span> <span>:ROM</span>
-                </p>
-                <br />
+                    <p class="card-text text-muted">
+                        <?php echo $row['title'];  ?>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> قیمت(تومان): </span> <span><?php echo $row['price'];  ?></span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['ram'];  ?> </span> <span>:RAM</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span> <?php echo $row['cpu'];  ?> </span> <span>:CPU</span>
+                    </p>
+                    <p class="card-text text-muted">
+                        <span><?php echo $row['rom'];  ?> </span> <span>:ROM</span>
+                    </p>
+                    <br />
                 <button class="btn btn-primary">
                   <span><i class="bi bi-cart-plus"></i></span> افزودن به سید
                   خرید
