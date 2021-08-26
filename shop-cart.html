@@ -25,7 +25,7 @@
     <title>Cart | سبد خرید</title>
   </head>
   <body>
-    <header class="shadow">
+    <header class="shadow-sm">
       <nav
         class="navbar navbar-expand-lg navbar-light bg-light align-items-center"
       >
@@ -211,6 +211,212 @@
       </nav>
     </header>
 
+    <section class="container-fluid bg-light my-3" id="cart-items">
+      <div class="container">
+        <div class="row align-items-center pt-3 pb-3" id="p1">
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <i class="fab fa-windows icon fs-3"></i>
+          </div>
+
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">نام محصول</h6>
+            <p class="text-muted text-center fw-bold mt-3">هاست ویندوز</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold mt-3">کد</h6>
+            <p class="text-muted text-center fw-bold mt-3">hw-2</p>
+          </div>
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">قیمت(تومان)</h6>
+            <p class="text-muted text-center fw-bold mt-3">35,000</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold">تعداد</h6>
+            <div class="quantity mt-2">
+              <a class="quantity__minus" onclick="decrement('counter1')"
+                ><h5 class="mt-1">-</h5></a
+              >
+              <input
+                name="quantity"
+                type="number"
+                class="quantity__input text-center"
+                value="1"
+                id="counter1"
+                disabled
+                min="1"
+              />
+              <a class="quantity__plus" onclick="increment('counter1')"
+                ><h5 class="mt-1">+</h5></a
+              >
+            </div>
+          </div>
+          <div class="col-md-2 text-center mb-md-0 mb-3">
+            <button class="btn btn-danger" onclick="hideDiv('p1')">
+              <span><i class="bi bi-trash"></i></span><span> حذف محصول </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="row align-items-center border-top pt-3 pb-3" id="p2">
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <i class="fab fa-linux icon fs-3"></i>
+          </div>
+
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">نام محصول</h6>
+            <p class="text-muted text-center fw-bold mt-3">هاست لینوکس</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold mt-3">کد</h6>
+            <p class="text-muted text-center fw-bold mt-3">hl-2</p>
+          </div>
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">قیمت(تومان)</h6>
+            <p class="text-muted text-center fw-bold mt-3">35,000</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold">تعداد</h6>
+            <div class="quantity mt-2">
+              <a class="quantity__minus" onclick="decrement('counter2')"
+                ><h5 class="mt-1">-</h5></a
+              >
+              <input
+                name="quantity"
+                type="number"
+                class="quantity__input text-center"
+                value="1"
+                id="counter2"
+                disabled
+                min="1"
+              />
+              <a class="quantity__plus" onclick="increment('counter2')"
+                ><h5 class="mt-1">+</h5></a
+              >
+            </div>
+          </div>
+          <div class="col-md-2 text-center mb-md-0 mb-3">
+            <button class="btn btn-danger" onclick="hideDiv('p2')">
+              <span><i class="bi bi-trash"></i></span><span> حذف محصول </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="row align-items-center border-top pt-3 pb-3" id="p3">
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <i class="fab fa-apple icon fs-3"></i>
+          </div>
+
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">نام محصول</h6>
+            <p class="text-muted text-center fw-bold mt-3">هاست مک</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold mt-3">کد</h6>
+            <p class="text-muted text-center fw-bold mt-3">hm-2</p>
+          </div>
+          <div class="col-md-2 text-center">
+            <h6 class="fw-bold mt-3">قیمت(تومان)</h6>
+            <p class="text-muted text-center fw-bold mt-3">35,000</p>
+          </div>
+          <div class="col-md-2 text-center my-4 my-md-0">
+            <h6 class="fw-bold">تعداد</h6>
+            <div class="quantity mt-2">
+              <a class="quantity__minus" onclick="decrement('counter3')"
+                ><h5 class="mt-1">-</h5></a
+              >
+              <input
+                name="quantity"
+                type="number"
+                class="quantity__input text-center"
+                value="1"
+                id="counter3"
+                disabled
+                min="1"
+              />
+              <a class="quantity__plus" onclick="increment('counter3')"
+                ><h5 class="mt-1">+</h5></a
+              >
+            </div>
+          </div>
+          <div class="col-md-2 text-center mb-md-0 mb-3">
+            <button class="btn btn-danger" onclick="hideDiv('p3')">
+              <span><i class="bi bi-trash"></i></span><span> حذف محصول </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light mt-2">
+      <div class="container py-3">
+        <div class="row justify-content-around align-items-center">
+          <div class="col-md-4">
+            <form action="">
+              <div class="row justify-content-center">
+                <label for="totalPrice" class="col-md-4 col-form-label fw-bold"
+                  >قیمت نهایی</label
+                >
+                <div class="col-md-8">
+                  <input
+                    class="form-control text-center w-100"
+                    id="totalPrice"
+                    disabled
+                    value="100,000"
+                  />
+                </div>
+              </div>
+              <div class="row mt-2 g-2">
+                <div class="col-12 form-floating text">
+                  <input
+                    type="text"
+                    class="form-control text-end"
+                    id="offCode"
+                    placeholder="name@example.com"
+                    style="height: 50px"
+                  />
+                  <label for="floatingInput" class="text-center"
+                    >کد تخفیف</label
+                  >
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-success w-100">اعمال کد تخفیف</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <h5 class="fw-bold mb-3 mt-md-0 mt-4">انتخاب درگاه:</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                بانک سامان
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+                checked
+              />
+              <label class="form-check-label fw-bold" for="flexRadioDefault2">
+                بانک ملی
+              </label>
+            </div>
+            <button class="btn btn-primary mt-3">
+              ورود به درگاه برای پرداخت
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div style="height: 150px; overflow: hidden">
       <svg
         viewBox="0 0 500 150"
@@ -224,7 +430,7 @@
       </svg>
     </div>
 
-    <footer class="bg-dark">
+    <footer class="bg-dark position-sticky">
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-md-6">
@@ -292,5 +498,6 @@
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
     ></script>
+    <script src="./carsPageScript.js"></script>
   </body>
 </html>
