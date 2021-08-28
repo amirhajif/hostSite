@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!(isset($_SESSION['active'])))
+{
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+}
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -22,7 +34,11 @@
     ></script>
 
     <link rel="stylesheet" href="./style.css" />
-    <title>Dashboard | دشبورد</title>
+<<<<<<< HEAD
+=======
+<title>Dashboard | دشبورد</title>
+      <script defer src="checkFile/fieldValidate.js"></script>
+>>>>>>> a98e6b366e07365c5e175c268ff0019b0034eb66
   </head>
   <body>
     <header class="shadow">
@@ -65,18 +81,18 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="window.php"
                       ><i class="fab fa-windows"></i
                       ><span> هاست ویندوز </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="linux.php"
                       ><i class="fab fa-linux"></i><span> هاست لینوکس </span></a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" href="mac.php"
                       ><i class="fab fa-apple"></i><span> هاست مک </span></a
                     >
                   </li>
@@ -299,14 +315,14 @@
               <span class="text-decoration-none"
                 ><i class="bi bi-person-check fs-4"></i
                 ><span class="fs-5">
-                  <bdi> "اسم یوزر" </bdi> خوش آمدید
+                  <bdi>   <?php echo $_SESSION['email'];?>   </bdi>           خوش آمدید
                 </span></span
               >
             </div>
 
             <div class="col-auto p-2 me-3">
               <a
-                href=""
+                onclick="logout()"
                 class="text-decoration-none btn btn-outline-danger rounded-pill"
                 ><i class="bi bi-box-arrow-left fs-4"></i
                 ><span class="fs-5"> خروج </span></a
@@ -335,16 +351,21 @@
                   <strong class="d-inline-block mb-2 text-primary"
                     >اطلاعات حساب
                   </strong>
-                  <h3 class="mb-0">اسم کاربری</h3>
+                  <h3 class="mb-0"><?php echo $_SESSION['email'];?></h3>
                   <div class="mb-1 text-muted">کاربر سایت</div>
                   <p class="card-text mb-auto">
                     <span>
                       <i class="bi bi-at"></i>
                       <span>ایمیل:</span>
-                      <span>ادرس ایمیل</span>
+                      <span><?php echo $_SESSION['email'];?></span>
                       <br />
+                        <?php
+                        $query="SELECT phoneNumber from users WHERE email='$_SESSION[email]'";
+                        $result=mysqli_query($link,$query);
+                        $row=mysqli_fetch_array($result);
+                        ?>
                       <i class="bi bi-telephone"></i> <span>شماره تماس:</span>
-                      <span>شماره تماس</span>
+                      <span><?php echo $row['phoneNumber'];?></span>
                     </span>
                   </p>
                 </div>
