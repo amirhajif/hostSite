@@ -22,7 +22,7 @@
     ></script>
 
     <link rel="stylesheet" href="./style.css" />
-    <title>یک تایتل</title>
+    <title>Dashboard | دشبورد</title>
   </head>
   <body>
     <header class="shadow">

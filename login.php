@@ -25,7 +25,7 @@ if (isset($_SESSION['failSignin']))
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./style.css" />
-    <title>یک تایتل</title>
+    <title>Login | ورود</title>
     <script src="checkFile/fieldValidate.js"></script>
   </head>
 
