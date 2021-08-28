@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!(isset($_SESSION['active'])))
+{
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+}
 try {
     $link = mysqli_connect("localhost", "root", "", "hostsite");
 } catch (Exception $exception) {
