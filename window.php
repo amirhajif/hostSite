@@ -221,7 +221,7 @@ mysqli_query($link,"SET NAMES utf8");
                   }
                   if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
                       ?>
-                      href="index.php"
+                      href="user-dashboard.php"
                       <?php
                   }
                   if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){

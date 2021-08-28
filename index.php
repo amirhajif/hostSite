@@ -204,7 +204,7 @@ if (isset($_SESSION['adminFirstLogin'])){
                   }
                   if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))){
                       ?>
-                          href="index.php"
+                          href="user-dashboard.php"
                   <?php
                   }
                   if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))){
