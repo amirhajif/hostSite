@@ -2,7 +2,7 @@
 session_start();
 if (!(isset($_SESSION['active'])))
 {
-    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+    header("Location: 403.php");
 }
 try {
     $link = mysqli_connect("localhost", "root", "", "hostsite");

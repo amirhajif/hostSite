@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!(isset($_SESSION['active'])))
+{
+    header("Location: 403.php");
+}
 try {
     $link = mysqli_connect("localhost", "root", "", "hostsite");
 } catch (Exception $exception) {
