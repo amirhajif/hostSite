@@ -34,11 +34,9 @@ try {
     ></script>
 
     <link rel="stylesheet" href="./style.css" />
-<<<<<<< HEAD
-=======
+
 <title>Dashboard | دشبورد</title>
       <script defer src="checkFile/fieldValidate.js"></script>
->>>>>>> a98e6b366e07365c5e175c268ff0019b0034eb66
   </head>
   <body>
     <header class="shadow">
