@@ -267,13 +267,10 @@ mysqli_query($link,"SET NAMES utf8");
         </div>
         <div class="row align-items-center">
             <?php
-            $codeUpdater=1;
             $query="SELECT * FROM linuxhost";
             $result=mysqli_query($link,$query);
             foreach ($result as $product){
-                $code="hl-".$codeUpdater;
-                showProduct($code,$product['version'],$product['title'],$product['price'],$product['ram'],$product['cpu'],$product['rom']);
-                $codeUpdater++;
+                showProduct("لینوکس",$product['code'],$product['version'],$product['title'],$product['price'],$product['ram'],$product['cpu'],$product['rom']);
             }
             ?>
       </div>
