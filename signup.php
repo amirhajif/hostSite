@@ -1,5 +1,33 @@
 <?php
 session_start();
+if (isset($_POST['signup'])){
+    if ($_POST['email']=="amirhh@gmail.com"){
+        $_SESSION['failSignUp']=true;
+    }
+    else {
+        try {
+            $link = mysqli_connect("localhost", "root", "", "hostsite");
+        } catch (Exception $exception) {
+            echo $exception;
+        }
+        $email = $_POST['email'];
+        $query = "SELECT * FROM users WHERE email='$email'";
+        $result = mysqli_query($link, $query);
+        if (mysqli_num_rows($result) > 0) {
+            $_SESSION['failSignUp'] = true;
+        } else {
+            $date = date("Y-m-d");
+            $password = $_POST['password'];
+            $phoneNumber = $_POST['phoneNumber'];
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['active'] = true;
+            $_SESSION['firstLogin'] = true;
+            $query = "INSERT INTO users (email,phoneNumber,password,registerDate) VALUES ('$email','$phoneNumber','$password','$date')";
+            mysqli_query($link, $query);
+            header("Location: http://localhost/hostSite");
+        }
+    }
+}
 if (isset($_SESSION['failSignUp']))
 {
     unset($_SESSION['failSignUp']);
@@ -35,7 +63,7 @@ if (isset($_SESSION['failSignUp']))
         <div class="row align-items-center justify-content-evenly">
           <div class="col-md-5">
             <h4 class="text-center fw-bold my-4">فرم ثبت نام</h4>
-            <form action="checkFile/checkSignUp.php" method="post" onsubmit="return signup()">
+            <form action="signup.php" method="post" onsubmit="return signup()">
               <div class="form-floating my-3">
                 <input
                   onchange="change('email')"
@@ -189,7 +217,7 @@ if (isset($_SESSION['failSignUp']))
                   </div>
                 </div>
                 <div class="col-md-5 my-4 my-md-0">
-                  <button class="btn btn-primary fw-bold" type="submit">
+                  <button class="btn btn-primary fw-bold" type="submit" name="signup">
                     ثبت نام
                   </button>
                 </div>
