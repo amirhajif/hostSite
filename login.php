@@ -1,5 +1,36 @@
 <?php
 session_start();
+if (isset($_POST['signin']))
+{
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    if ($email=="amirhh@gmail.com" && $password=='12345678'){
+        $_SESSION['email']=$email;
+        $_SESSION['active']=true;
+        $_SESSION['admin']=true;
+        $_SESSION['adminFirstLogin']=true;
+        header("Location: http://localhost/hostSite");
+        return;
+    }
+    try {
+        $link = mysqli_connect("localhost", "root", "", "hostsite");
+    } catch (Exception $exception) {
+        echo $exception;
+    }
+    $query="SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result=mysqli_query($link,$query);
+    if (mysqli_num_rows($result) == 0 )
+    {
+        $_SESSION['failSignin']=true;
+    }
+    else
+    {
+        $_SESSION['active']=true;
+        $_SESSION['email']=$email;
+        $_SESSION['firstLogin']=true;
+        header("Location: http://localhost/hostSite");
+    }
+}
 if (isset($_SESSION['failSignin']))
 {
     unset($_SESSION['failSignin']);
@@ -48,7 +79,7 @@ if (isset($_SESSION['failSignin']))
             >
           </p>
           <div class="mx-auto" id="login-hr">یا</div>
-          <form action="checkFile/checkSignIn.php" method="post" onsubmit="return signin()">
+          <form action="login.php" method="post" onsubmit="return signin()">
             <div class="form-floating form-element mx-auto mt-2 text-center">
               <input
                 onchange="change('email')"
@@ -79,6 +110,7 @@ if (isset($_SESSION['failSignin']))
 
             <div class="text-center">
               <button
+                name="signin"
                 class="btn btn-danger form-element shadow-lg"
                 type="submit"
               >
