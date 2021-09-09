@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 25, 2021 at 06:03 PM
+-- Generation Time: Sep 09, 2021 at 01:53 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -83,24 +83,26 @@ INSERT INTO `linuxhost` (`code`, `version`, `title`, `price`, `ram`, `cpu`, `rom
 DROP TABLE IF EXISTS `machost`;
 CREATE TABLE IF NOT EXISTS `machost` (
   `code` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `version` varchar(10) COLLATE utf8_persian_ci NOT NULL,
   `title` varchar(40) COLLATE utf8_persian_ci NOT NULL,
   `price` varchar(10) COLLATE utf8_persian_ci NOT NULL,
   `ram` varchar(10) COLLATE utf8_persian_ci NOT NULL,
   `cpu` varchar(20) COLLATE utf8_persian_ci NOT NULL,
-  `rom` varchar(15) COLLATE utf8_persian_ci NOT NULL
+  `rom` varchar(15) COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `machost`
 --
 
-INSERT INTO `machost` (`code`, `title`, `price`, `ram`, `cpu`, `rom`) VALUES
-('hm-1', 'اشتراک یک ماهه به همراه 10 روز هدیه ', '35,000', '8GB', 'M1', '256SSD'),
-('hm-2', 'اشتراک دو ماهه به همراه 20 روز هدیه', '65,000', '8GB', 'M1', '256SSD'),
-('hm-3', 'اشتراک سه ماهه به همراه 30 روز هدیه', '105,000', '8GB', 'M1', '256SSD'),
-('hm-4', 'اشتراک یک ماهه به همراه 10 روز هدیه', '30,000', '8GB', 'Intel Core i5', '256SSD'),
-('hm-5', 'اشتراک دو ماهه به همراه 20 روز هدیه', '55,000', '8GB', 'Intel Core i5', '256SSD'),
-('hm-6', 'اشتراک سه ماهه به همراه 30 روز هدیه', '90,000', '8GB', 'Intel Core i5', '256SSD');
+INSERT INTO `machost` (`code`, `version`, `title`, `price`, `ram`, `cpu`, `rom`) VALUES
+('hm-1', 'm1', 'اشتراک یک ماهه به همراه 10 روز هدیه ', '35,000', '8GB', 'M1', '256SSD'),
+('hm-2', 'm1', 'اشتراک دو ماهه به همراه 20 روز هدیه', '65,000', '8GB', 'M1', '256SSD'),
+('hm-3', 'm1', 'اشتراک سه ماهه به همراه 30 روز هدیه', '105,000', '8GB', 'M1', '256SSD'),
+('hm-4', 'm1', 'اشتراک یک ماهه به همراه 10 روز هدیه', '30,000', '8GB', 'Intel Core i5', '256SSD'),
+('hm-5', 'm1', 'اشتراک دو ماهه به همراه 20 روز هدیه', '55,000', '8GB', 'Intel Core i5', '256SSD'),
+('hm-6', 'm1', 'اشتراک سه ماهه به همراه 30 روز هدیه', '90,000', '8GB', 'Intel Core i5', '256SSD');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`email`, `phoneNumber`, `password`, `registerDate`) VALUES
-('amirhajitabar2@gmail.com', '09116612648', '12345678', '2021-08-21');
+('amirhajitabar2@gmail.com', '09116612648', '12345678', '2021-08-21'),
+('hajitabaramir4@gmail.com', '09116612648', '12345678', '2021-08-25'),
+('amir@gmail.com', '09116612648', '12345678', '2021-08-31');
 
 -- --------------------------------------------------------
 
@@ -142,7 +146,8 @@ CREATE TABLE IF NOT EXISTS `visitors` (
 --
 
 INSERT INTO `visitors` (`date`, `ip`) VALUES
-('2021-08-21', '::1');
+('2021-08-25', '::1'),
+('2021-08-28', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -153,24 +158,26 @@ INSERT INTO `visitors` (`date`, `ip`) VALUES
 DROP TABLE IF EXISTS `windowshost`;
 CREATE TABLE IF NOT EXISTS `windowshost` (
   `code` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `version` varchar(10) COLLATE utf8_persian_ci NOT NULL,
   `title` varchar(40) COLLATE utf8_persian_ci NOT NULL,
   `price` varchar(20) COLLATE utf8_persian_ci NOT NULL,
   `ram` varchar(5) COLLATE utf8_persian_ci NOT NULL,
   `cpu` varchar(20) COLLATE utf8_persian_ci NOT NULL,
-  `rom` varchar(20) COLLATE utf8_persian_ci NOT NULL
+  `rom` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `windowshost`
 --
 
-INSERT INTO `windowshost` (`code`, `title`, `price`, `ram`, `cpu`, `rom`) VALUES
-('hw-1', ' اشتراک یک ماهه به همراه 10 روز هدیه ', '20,000', '8GB', 'Intel Core i7', '1TB'),
-('hw-2', ' اشتراک دو ماهه به همراه 20 روز هدیه ', '35,000', '8GB ', 'Intel Core i7', '1TB'),
-('hw-3', ' اشتراک سه ماهه به همراه 30 روز هدیه ', ' 60,000', '8GB ', 'Intel Core i7', '1TB'),
-('hw-4', ' اشتراک یک ماهه به همراه 10 روز هدیه ', '30,000', '12GB ', 'Intel Core i7', '1TB + 128 SSD'),
-('hw-5', 'اشتراک دو ماهه به همراه 20 روز هدیه', '55,000', '12GB', 'Intel Core i7', '1TB + 128 SSD'),
-('hw-6', 'اشتراک سه ماهه به همراه 30 روز هدیه', '90,000', '12GB', 'Intel Core i7', '1TB + 128 SSD');
+INSERT INTO `windowshost` (`code`, `version`, `title`, `price`, `ram`, `cpu`, `rom`) VALUES
+('hw-1', 'windows 10', ' اشتراک یک ماهه به همراه 10 روز هدیه ', '20,000', '8GB', 'Intel Core i7', '1TB'),
+('hw-2', 'windows 10', ' اشتراک دو ماهه به همراه 20 روز هدیه ', '35,000', '8GB ', 'Intel Core i7', '1TB'),
+('hw-3', 'windows 10', ' اشتراک سه ماهه به همراه 30 روز هدیه ', ' 60,000', '8GB ', 'Intel Core i7', '1TB'),
+('hw-4', 'windows 10', ' اشتراک یک ماهه به همراه 10 روز هدیه ', '30,000', '12GB ', 'Intel Core i7', '1TB + 128 SSD'),
+('hw-5', 'windows 10', 'اشتراک دو ماهه به همراه 20 روز هدیه', '55,000', '12GB', 'Intel Core i7', '1TB + 128 SSD'),
+('hw-6', 'windows 10', 'اشتراک سه ماهه به همراه 30 روز هدیه', '90,000', '12GB', 'Intel Core i7', '1TB + 128 SSD');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
