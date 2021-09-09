@@ -1,3 +1,10 @@
+<?php
+try {
+    $link = mysqli_connect("localhost", "root", "", "hostsite");
+} catch (Exception $exception) {
+    echo $exception;
+}
+?>
 <header class="shadow">
     <nav class="navbar navbar-expand-xl navbar-light bg-light align-items-center">
         <div class="container">
@@ -48,7 +55,7 @@
                                 </div>
 
                                 <!-- check -->
-                                <form action="">
+                                <form action="#" method="post">
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">ارسال به ایمیل</label>
@@ -56,18 +63,27 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="message-text" class="col-form-label">پیام شما</label>
-                                            <textarea class="form-control" id="message-text" rows="8"></textarea>
+                                            <textarea class="form-control" id="message-text" name="message" rows="8"></textarea>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                             بستن
                                         </button>
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary" name="submit">
                                             ارسال پیام
                                         </button>
                                     </div>
                                 </form>
+                                <?php
+                                if (isset($_POST['submit'])){
+//                                    echo '<script>console.log("clicked")</script>';
+                                    $message=$_POST['message'];
+                                    $query="INSERT INTO messages (message) VALUES ('$message')";
+                                    mysqli_query($link,$query);
+                                    echo '<script>window.alert("پیغام شما ارسال شد")</script>';
+                                }
+                                ?>
 
                             </div>
                         </div>
@@ -102,16 +118,16 @@
                     </span>
                     <span>
                         <a class="btn btn-outline-primary rounded-pill" style="width: 120px" <?php
-                                                                                                if (isset($_SESSION['admin'])) {
-                                                                                                ?> href="admin-dashboard.php" <?php
+                                         if (isset($_SESSION['admin'])) {
+                                        ?> href="admin-dashboard.php" <?php
                                                                                                                 }
-                                                                                                                if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))) {
-                                                                                                                    ?> href="user-dashboard.php" <?php
-                                                                                                                                            }
-                                                                                                                                            if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))) {
-                                                                                                                                                ?> href="login.php" <?php
-                                                                                                                                                                }
-                                                                                                                                                                    ?>>
+                                         if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))) {
+                                    ?> href="user-dashboard.php" <?php
+                                    }
+                                    if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))) {
+                                    ?> href="login.php" <?php
+                                 }
+                                ?>>
                             <?php
                             if (isset($_SESSION['admin'])) {
                             ?>

@@ -48,7 +48,5 @@ $product="
           </div>
           ";
 echo $product;
-
-
 }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 09, 2021 at 01:53 PM
+-- Generation Time: Sep 09, 2021 at 02:15 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -103,6 +103,26 @@ INSERT INTO `machost` (`code`, `version`, `title`, `price`, `ram`, `cpu`, `rom`)
 ('hm-4', 'm1', 'اشتراک یک ماهه به همراه 10 روز هدیه', '30,000', '8GB', 'Intel Core i5', '256SSD'),
 ('hm-5', 'm1', 'اشتراک دو ماهه به همراه 20 روز هدیه', '55,000', '8GB', 'Intel Core i5', '256SSD'),
 ('hm-6', 'm1', 'اشتراک سه ماهه به همراه 30 روز هدیه', '90,000', '8GB', 'Intel Core i5', '256SSD');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE IF NOT EXISTS `messages` (
+  `message` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`message`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message`) VALUES
+(''),
+('asdasdsad');
 
 -- --------------------------------------------------------
 
