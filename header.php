@@ -76,11 +76,11 @@ try {
                                     </div>
                                 </form>
                                 <?php
-                                if (isset($_POST['submit'])){
-//                                    echo '<script>console.log("clicked")</script>';
-                                    $message=$_POST['message'];
-                                    $query="INSERT INTO messages (message) VALUES ('$message')";
-                                    mysqli_query($link,$query);
+                                if (isset($_POST['submit'])) {
+                                    //                                    echo '<script>console.log("clicked")</script>';
+                                    $message = $_POST['message'];
+                                    $query = "INSERT INTO messages (message) VALUES ('$message')";
+                                    mysqli_query($link, $query);
                                     echo '<script>window.alert("پیغام شما ارسال شد")</script>';
                                 }
                                 ?>
@@ -93,7 +93,12 @@ try {
 
                     <!-- check -->
                     <form action="" class="d-flex mt-md-1 ms-md-4 my-md-0 my-4">
-                        <input type="text" class="form-control" placeholder="جست و جو ..." />
+                        <div>
+                            <input type="text" class="form-control" placeholder="جست و جو ..." id="search-input" />
+                            <div class="dropdown-menu" id="suggest-box">
+                            </div>
+                            <script src="headerScript.js"></script>
+                        </div>
                         <button class="btn btn-outline-primary ms-1" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
@@ -118,16 +123,16 @@ try {
                     </span>
                     <span>
                         <a class="btn btn-outline-primary rounded-pill" style="width: 120px" <?php
-                                         if (isset($_SESSION['admin'])) {
-                                        ?> href="admin-dashboard.php" <?php
-                                                                                                                }
-                                         if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))) {
-                                    ?> href="user-dashboard.php" <?php
-                                    }
-                                    if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))) {
-                                    ?> href="login.php" <?php
-                                 }
-                                ?>>
+                                                                                                if (isset($_SESSION['admin'])) {
+                                                                                                ?> href="admin-dashboard.php" <?php
+                                                                                                                            }
+                                                                                                                            if (isset($_SESSION['active']) && !(isset($_SESSION['admin']))) {
+                                                                                                                                ?> href="user-dashboard.php" <?php
+                                                                                                                                                            }
+                                                                                                                                                            if (!(isset($_SESSION['admin'])) && !(isset($_SESSION['active']))) {
+                                                                                                                                                                ?> href="login.php" <?php
+                                                                                                                                                                                }
+                                                                                                                                                                                    ?>>
                             <?php
                             if (isset($_SESSION['admin'])) {
                             ?>
