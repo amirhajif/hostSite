@@ -97,11 +97,10 @@ try {
                             <input type="text" class="form-control" placeholder="جست و جو ..." id="search-input" />
                             <div class="dropdown-menu" id="suggest-box">
                             </div>
-                            <script src="headerScript.js"></script>
                         </div>
-                        <button class="btn btn-outline-primary ms-1" type="submit">
+                        <a class="btn btn-outline-primary ms-1" id="search-btn" type="submit" href="#">
                             <i class="bi bi-search"></i>
-                        </button>
+                        </a>
                     </form>
                 </li>
 
@@ -155,5 +154,8 @@ try {
                 </div>
             </div>
         </div>
+
     </nav>
+    <script src="headerScript.js"></script>
+
 </header>

@@ -2,17 +2,11 @@
 //variables
 ///////////////
 
-const suggestions = [
-  "هاست ویندوز",
-  "هاست مک",
-  "هاست لینوکس",
-  "فروش ویژه",
-  "همه هاست ها",
-  "پرفروش ترین ها",
-];
+const suggestions = ["هاست ویندوز", "هاست مک", "هاست لینوکس", "همه هاست ها"];
 const searchInput = document.querySelector("#search-input");
 const suggestBox = document.querySelector("#suggest-box");
 const searchBtn = document.querySelector("#submit-search");
+const btnSearch = document.querySelector("#search-btn");
 
 ////////////////
 //eventlisteners
@@ -21,9 +15,9 @@ const searchBtn = document.querySelector("#submit-search");
 eventListener();
 function eventListener() {
   searchInput.addEventListener("keyup", suggest);
-  searchInput.addEventListener("blur", hideList);
   searchInput.addEventListener("focus", showList);
   suggestBox.addEventListener("click", fillInput);
+  btnSearch.addEventListener("click", showResult);
 }
 
 ///////////////
@@ -69,6 +63,7 @@ function fillInput(e) {
   const target = e.target;
   if (target.classList.contains("dropdown-item")) {
     searchInput.value = target.textContent;
+    hideList();
   }
 }
 
@@ -80,4 +75,25 @@ function hideList() {
 //function for show the suggest list
 function showList() {
   suggestBox.style.display = "block";
+}
+
+//function for go to page we want to go with search
+function showResult() {
+  let searchText = searchInput.value;
+  switch (searchText) {
+    case "هاست ویندوز":
+      btnSearch.href = "./window.php";
+      break;
+    case "هاست مک":
+      btnSearch.href = "./mac.php";
+      break;
+    case "هاست لینوکس":
+      btnSearch.href = "./linux.php";
+      break;
+    case "همه هاست ها":
+      btnSearch.href = "./allProducts.php";
+      break;
+    default:
+      alert("نتیجه ای یافت نشد!");
+  }
 }
