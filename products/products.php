@@ -1,5 +1,5 @@
 <?php
-function showProduct($type,$code,$version,$title,$price,$ram,$cpu,$rom){
+function showProduct($iconClass,$type,$code,$version,$title,$price,$ram,$cpu,$rom){
 $product="
     <div class='col-md-4'>
             <div class='card text-center shadow my-4 py-4 position-relative'>
@@ -19,7 +19,7 @@ $product="
                 <span>Code:</span><span>$code</span>
               </span>
                 <div class='card-body'>
-                    <i class='fab fa-linux icon fa-2x'></i>
+                    <i class='$iconClass'></i>
                     <p class='lead card-title fw-bold my-3'>هاست $type</p>
                     <p class='lead card-title fw-bold my-3'>نسخه $type: $version</p>
 

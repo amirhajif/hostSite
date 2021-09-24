@@ -42,7 +42,7 @@ mysqli_query($link, "SET NAMES utf8");
         $query = "SELECT * FROM windowshost";
         $result = mysqli_query($link, $query);
         foreach ($result as $product) {
-          showProduct("ویندوز", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
+          showProduct("fab fa-windows icon fa-2x","ویندوز", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
         }
         ?>
       </div>

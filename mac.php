@@ -42,7 +42,7 @@ mysqli_query($link, "SET NAMES utf8");
         $query = "SELECT * FROM machost";
         $result = mysqli_query($link, $query);
         foreach ($result as $product) {
-          showProduct("مک", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
+          showProduct("fab fa-apple icon fa-2x","مک", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
         }
         ?>
       </div>

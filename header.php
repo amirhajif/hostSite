@@ -4,6 +4,8 @@ try {
 } catch (Exception $exception) {
     echo $exception;
 }
+mysqli_query($link, "SET NAMES utf8");
+
 ?>
 <header class="shadow">
     <nav class="navbar navbar-expand-xl navbar-light bg-light align-items-center">

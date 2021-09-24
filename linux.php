@@ -42,7 +42,7 @@ mysqli_query($link, "SET NAMES utf8");
         $query = "SELECT * FROM linuxhost";
         $result = mysqli_query($link, $query);
         foreach ($result as $product) {
-          showProduct("لینوکس", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
+          showProduct("fab fa-linux icon fa-2x","لینوکس", $product['code'], $product['version'], $product['title'], $product['price'], $product['ram'], $product['cpu'], $product['rom']);
         }
         ?>
       </div>
